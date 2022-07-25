@@ -52,6 +52,54 @@ public class MyLinkedList<K> {
     	public void printlist() {
     		
     	System.out.println("MyNode is: "+head);
-    }   
-    
+    }
+
+		 public INode<K> popFirst(){
+		        if(head==null){
+		            System.out.println("LinkedList is already empty ");
+		            return null;
+		        }
+		        INode<K> removedNode = head;
+		        head=head.getNext();
+		        return  removedNode;
+		    }
+		    public INode<K> pop(){
+		        if(head==null){
+		            System.out.println("LinkedList is already empty ");
+		            return null;
+		        }
+		        INode<K> tempNode;
+		        INode<K> removedNode=tail;
+
+		        tempNode = head;
+		        while(tempNode.getNext() != tail){
+		            tempNode = tempNode.getNext();
+		        }
+		        tempNode.setNext(null);
+		        tail=tempNode;
+		        return removedNode;
+		    }
+		    public void searching(INode<K> node){
+		        if(head==null){
+		            System.out.println("LinkedList is already empty ");
+		            return;
+		        }
+		        INode<K> tempNode=head;
+		        boolean check=false;
+
+		        while(tempNode != null){
+
+		            K data1 = tempNode.getKey();
+		            K data2 = node.getKey();
+		            if(data1.equals(data2)){
+		                System.out.println("30 is present in the list");
+		                check = true;
+		                return;
+		            }
+		            tempNode = tempNode.getNext();
+		        }//end while
+		        if(check == false){
+		            System.out.println("30 not found in the list");
+		        }
+		    }
 }

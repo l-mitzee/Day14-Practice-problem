@@ -14,7 +14,16 @@ public class MyLinkListMain {
         listNode.add(secondNode);
         listNode.add(thirdNode);
         listNode.printlist();
-		
+        listNode.addMiddle(thirdNode);
+        listNode.printList();
+        listNode.pop();
+        listNode.printList();
+
+        listNode.popFirst();
+        listNode.printList();
+
+      listNode.searching(secondNode);
+
 	}
 	
 }
